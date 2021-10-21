@@ -1,32 +1,30 @@
 import React, { useState } from 'react' 
+import Reply from './Reply'
 
 const Post = () => {
-    const [name, editName] = useState('')
+    const [poster, editName] = useState('')
     const [post, editPost] = useState('')
 
     return (
     <><h2>New Post</h2>
     <form name="postForm">
         <div>
-        <input type="text" id="name" placeholder="Name..." value={name} onChange={e => editName(e.target.value)} required/> </div>
+        <input type="text" id="name" placeholder="Name..." value={poster} onChange={e => editName(e.target.value)} required/> </div>
         <div>
-            <input type="text" id="post" placeholder="Write a new post..." value={post} onChange={e => editPost(e.target.value)}required/>
+            <input type="text" cols="30" rows="10" id="post" placeholder="Write a new post..." value={post} onChange={e => editPost(e.target.value)}required/>
         </div>
         <div>
-            <button className="button" type="submit" disabled={name.length === 0 || post.length === 0} onSubmit={onSubmit(name, post)}>Submit</button>
+            <button className="button" type="submit" disabled={poster.length === 0 || post.length === 0} onSubmit={handleSubmit(poster, post)}>Submit</button>
         </div>
     </form>
-    <div onSubmit={e => e.target.reset()}> 
-    <h3 style={{color: 'blue'}}>{name}</h3>
-    <div>{post}</div>
-    </div> 
+    <textarea name="post" cols="30" rows="10"></textarea>
     </>
     
     )
     
 }
 
-const onSubmit = (name, post) => {
+const handleSubmit = (name, post) => {
     let oldName = name
     let oldPost = post
     return (
