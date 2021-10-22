@@ -1,38 +1,31 @@
 import React, { useState } from 'react' 
 import Reply from './Reply'
 
-const Post = () => {
-    const [poster, editName] = useState('')
-    const [post, editPost] = useState('')
 
+const Post = (pl) => {
+    /*
+    const posts = PostList.map((p) => 
+    <li>p</li>
+    ) */
+    console.log('running Post')
+    var posts = []
+    console.log('postList', pl)
+    /*posts = pl.forEach(p =>
+        <li>{p}</li>
+    ) */
+    console.log('posts')
+    console.log(posts)
     return (
-    <><h2>New Post</h2>
-    <form name="postForm">
-        <div>
-        <input type="text" id="name" placeholder="Name..." value={poster} onChange={e => editName(e.target.value)} required/> </div>
-        <div>
-            <input type="text" cols="30" rows="10" id="post" placeholder="Write a new post..." value={post} onChange={e => editPost(e.target.value)}required/>
-        </div>
-        <div>
-            <button className="button" type="submit" disabled={poster.length === 0 || post.length === 0} onSubmit={handleSubmit(poster, post)}>Submit</button>
-        </div>
-    </form>
-    <textarea name="post" cols="30" rows="10"></textarea>
+    <><h2>Published Posts</h2>
+    <div>
+        <ul>{posts}</ul>
+    </div>
     </>
     
     )
     
 }
 
-const handleSubmit = (name, post) => {
-    let oldName = name
-    let oldPost = post
-    return (
-    <><h3 style={{color: 'blue'}}>{oldName}</h3>
-    <div>{oldPost}</div>
-    </>
-    )
-}
 
 /*
 const changeName = (newName) => (

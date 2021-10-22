@@ -1,13 +1,15 @@
 import React from 'react'
 import '../App.css'
 
+import Title from './components/Title'
 import Post from './components/Post'
 import Reply from './components/Reply'
+import PublishPost from './components/PublishPost'
 
 const App = () => (
   <>
-    <h1>CIS 197 Community!</h1>
-    <Post />
+    <Title />
+    <PublishPost />
   </>
 
 )

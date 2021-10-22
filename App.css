@@ -4,8 +4,6 @@
     font-family: 'Roboto', Arial, sans-serif;
     color: #616161;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
   
   body {
@@ -36,18 +34,6 @@
     font-size: 14px;
   }
   
-  /* Hyperlink */
-  
-  a {
-    cursor: pointer;
-    color: #1976d2;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    opacity: 0.8;
-  }
-  
   /* Input */
 
   form {
@@ -64,11 +50,22 @@
   }
   
   label {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     margin-bottom: 4px;
+    margin-left: 10px;
     display: block;
-    text-transform: uppercase;
+    text-transform: none;
+  }
+
+  .formLabel {
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: bold
+  }
+
+  textarea {
+    margin-bottom: 10px;
   }
   
   /* Button */
